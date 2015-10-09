@@ -48,7 +48,7 @@ Material:
         first:
           name: _OcclusionMap
         second:
-          m_Texture: {fileID: 2800000, guid: 2f05d3c8ea2ec3b42a56a06e10bb772c, type: 3}
+          m_Texture: {fileID: 2800000, guid: 5c278b6451317b24c8cd98a83469ee56, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -102,7 +102,7 @@ Material:
       data:
         first:
           name: _Parallax
-        second: .0199999996
+        second: .0799999982
       data:
         first:
           name: _ZWrite
@@ -114,7 +114,7 @@ Material:
       data:
         first:
           name: _BumpScale
-        second: 2
+        second: 1
       data:
         first:
           name: _OcclusionStrength
