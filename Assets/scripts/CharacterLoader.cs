@@ -14,6 +14,7 @@ public class CharacterLoader : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 		player = GameGlobals.player;
 		instanciarPlayers ();
 
