@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour {
 	public PlayersData playerData;
 	bool usingPowerUp = false;
 	bool isWalking = false;
+	bool isGrounded = true;
 	public Animator anim;
 
 	private Vector3 fixo;
 	private Transform giro;
 	private float rotY;
+	private float distToGround;
 	public bool hasHit = false;
 	public int delayReturn = 100;
 	private int delayCount;
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
 		anim = GetComponentInChildren<Animator> ();
+		distToGround = GetComponent<Collider> ().bounds.extents.y;
 
 
 		giro = this.transform.FindChild("ginbal").transform;
@@ -63,6 +66,7 @@ public class PlayerController : MonoBehaviour {
 				usingPowerUp = false;
 			}
 		}
+		Debug.Log (gameObject.GetInstanceID () + " status = " + isGrounded);
 
 	}
 	void OnTriggerEnter(Collider other) 
@@ -72,10 +76,23 @@ public class PlayerController : MonoBehaviour {
 			this.gameObject.SetActive(false);
 			ScoreController.score--;
 
-		}
-		if (other.gameObject.CompareTag ("Player")) {
+		}else 	if (other.gameObject.CompareTag ("Player")) {
 			other.GetComponent<PlayerController>().hasHit = true;
 			this.hasHit = true;
+		}
+	}
+	void OnCollisionStay(Collision other){
+		if (other.gameObject.CompareTag ("Ground")) {
+
+			isGrounded = true;
+			
+		}
+	}
+	void OnCollisionExit(Collision other){
+		if (other.gameObject.CompareTag ("Ground")) {
+
+			isGrounded = false;
+			
 		}
 	}
 	
@@ -91,8 +108,11 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		//aplicando a força ao objeto
-		Vector3 movement = new Vector3 (-h, u, -v);
-		rb.AddForce (movement*speed );
+
+		if (isGrounded) {
+			Vector3 movement = new Vector3 (-h, u, -v);
+			rb.AddForce (movement * speed);
+		}
 
 
 		//rotacionando roedor
@@ -154,5 +174,7 @@ public class PlayerController : MonoBehaviour {
 		}
 
 	}
+
+
 
 }
