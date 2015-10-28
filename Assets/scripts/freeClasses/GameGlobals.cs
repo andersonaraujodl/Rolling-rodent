@@ -14,7 +14,7 @@ public class GameGlobals  {
 	
 
 	static public PlayersData[] playersToLoad = new PlayersData[]{
-		new PlayersData(GameGlobals.atrib.PLAYER_ONE, new Vector4(1f,0f,0f,0.05f), 4.0f, 1.0f, 10f, 0.5f, "bola4", "hamster", "power"),
+		new PlayersData(GameGlobals.atrib.PLAYER_ONE, new Vector4(1f,0f,0f,0.05f), 4.0f, 1.0f, 10f, 0.5f, "bola4", "ratazana", "power"),
 		new PlayersData(GameGlobals.atrib.PLAYER_TWO, new Vector4(0.14f,0.19f,0.23f,1f), 4.0f, 3.0f, 50f, 0.8f, "bola2", "hamster", "power"),
 		new PlayersData(GameGlobals.atrib.NPC, new Vector4(0f,0f,1f,1f), 3.0f, 2.0f, 10f, 0.1f, "bola1", "hamster", "power"),
 		new PlayersData(GameGlobals.atrib.NPC, new Vector4(0f,1f,1f,1f), 3.5f, 0.5f, 07f, 0.3f, "bola1", "hamster", "power"),
