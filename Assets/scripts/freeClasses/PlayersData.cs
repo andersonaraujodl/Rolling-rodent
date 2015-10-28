@@ -20,7 +20,7 @@ public class PlayersData {
 		this.forca = forca;
 		this.drag = drag;
 		this.bola = Resources.Load(bolaPath) as Material;
-		//this.roedor = Resources.Load (roedorPath) as GameObject;
+		this.roedor = Resources.Load (roedorPath) as GameObject;
 		//this.power = power;
 	}
 }

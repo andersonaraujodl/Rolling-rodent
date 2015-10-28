@@ -163,6 +163,9 @@ public class PlayerController : MonoBehaviour {
 		this.GetComponent<Rigidbody>().mass = pd.densidade*pd.scale;
 		this.GetComponent<Rigidbody>().drag = pd.drag;
 		this.GetComponent<PlayerController>().speed = pd.forca;
+		GameObject roedor = Instantiate(pd.roedor, this.GetComponentInChildren<Transform>().position, this.GetComponentInChildren<Transform>().rotation ) as GameObject;
+		roedor.transform.localScale = this.transform.localScale;
+		roedor.transform.parent = this.transform.FindChild("ginbal").transform;
 
 			
 			
