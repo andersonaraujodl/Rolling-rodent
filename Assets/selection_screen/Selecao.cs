@@ -21,19 +21,22 @@ public class Selecao : MonoBehaviour
     public Text[] txtTela;
     static public string player1_cpu, player2_cpu, player3_cpu, player4_cpu, player5_cpu, player6_cpu;
 
+    public AudioSource somTroca;
+
+
     // Use this for initialization
     void Start()
     {
        Object.DontDestroyOnLoad(this);
+
+        somTroca = GetComponent<AudioSource>();
 
         indexNivel = 0;
         nivel = new int[18];
         bolaCena = new GameObject[6];
         roedorCena = new GameObject[6];
 
-        //player1Pos = GameObject.Find("p1");
-        //player2Pos = GameObject.Find("p2");
-
+        
         player1_cpu = "Player 1";
         player2_cpu = "CPU";
         player3_cpu = "CPU";
@@ -48,16 +51,6 @@ public class Selecao : MonoBehaviour
     void Update()
     {
 
-        /*if (Application.loadedLevelName == "jogo" )
-        {
-            personagemJogo = GameObject.Find("Player");
-            bolaCena = (GameObject)Instantiate(bola[nivel[0]], personagemJogo.transform.position, personagemJogo.transform.rotation);
-            Destroy(personagemJogo);
-            
-            bolaCena.AddComponent(System.Type.GetType("Move"));
-            Destroy(this);
-        }*/
-
         if (Application.loadedLevelName == "selecao")
         {
 
@@ -65,6 +58,7 @@ public class Selecao : MonoBehaviour
             {
 
                 Application.LoadLevel("test_arena");
+                Destroy(this);
 
 
 
@@ -97,35 +91,7 @@ public class Selecao : MonoBehaviour
                 k = k + 3;
             }
 
-            /*if (!roedorCena[0])
-            {
-                roedorCena[0] = (GameObject)Instantiate(roedor[nivel[1]], player1Pos.transform.position, Quaternion.identity);
-                rb2 = roedorCena[0].GetComponent<Rigidbody>();
-                rb2.useGravity = false;
-            }
-            else if (!bolaCena[0])
-            {
-                bolaCena[0] = (GameObject)Instantiate(bola[nivel[2]], player1Pos.transform.position, Quaternion.identity);
-                rb1 = bolaCena[0].GetComponent<Rigidbody>();
-                rb1.useGravity = false;
-            }
-            if (!roedorCena[1])
-            {
-                roedorCena[1] = (GameObject)Instantiate(roedor[nivel[4]], player2Pos.transform.position, Quaternion.identity);
-                rb2 = roedorCena[1].GetComponent<Rigidbody>();
-                rb2.useGravity = false;
-            }
-            else if (!bolaCena[1])
-            {
-                bolaCena[1] = (GameObject)Instantiate(bola[nivel[5]], player2Pos.transform.position, Quaternion.identity);
-                rb1 = bolaCena[1].GetComponent<Rigidbody>();
-                rb1.useGravity = false;
-            }
-            else
-            {
-                roedorCena[0].transform.Rotate(0, 90 * Time.deltaTime, 0);
-                bolaCena[0].transform.Rotate(0, 90 * Time.deltaTime, 0);
-            }*/
+            
 
             txtTela[0].text = player1_cpu;
             txtTela[3].text = player2_cpu;
@@ -133,8 +99,6 @@ public class Selecao : MonoBehaviour
             txtTela[9].text = player4_cpu;
             txtTela[12].text = player5_cpu;
             txtTela[15].text = player6_cpu;
-            //txtTela[1].text = Chars.rodentsGame[nivel[1]].nome;
-            //txtTela[2].text = Chars.ballsGame[nivel[2]].nome;
 
             corTexto(indexNivel);
 
@@ -167,7 +131,7 @@ public class Selecao : MonoBehaviour
                 {
                     playerCPU(indexNivel);
                 }
-
+                somTroca.Play();
                 Destroy_Obj(indexNivel);
 
             }
@@ -187,6 +151,7 @@ public class Selecao : MonoBehaviour
                 {
                     playerCPU(indexNivel);
                 }
+                somTroca.Play();
                 Destroy_Obj(indexNivel);
             }
 
