@@ -21,7 +21,7 @@ public class CharacterLoader : MonoBehaviour {
 		GameObject[] personagens = GameObject.FindGameObjectsWithTag ("Player");
 		int x=0;
 		foreach (GameObject personagem in personagens) {
-			personagem.GetComponent<PlayerController>().customizaPlayer(GameGlobals.playersToLoad[x]);
+			personagem.GetComponent<PlayerController>().customizaPlayer(Selecao.playersToLoad[x]);
 			
 			x++;
 		}

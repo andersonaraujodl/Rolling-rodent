@@ -23,6 +23,8 @@ public class Selecao : MonoBehaviour
 
     public AudioSource somTroca;
 
+    static public PlayersData[] playersToLoad;
+
 
     // Use this for initialization
     void Start()
@@ -57,7 +59,29 @@ public class Selecao : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return))
             {
 
+                for (int i=0; i < nivel.Length; i++)
+                {
+                    if (i % 3 == 1 && nivel[i] == 0)
+                    {
+                        nivel[i] = Random.Range(1, roedor.Length);
+                    }
+                    if (i % 3 == 2 && nivel[i] == 0)
+                    {
+                        nivel[i] = Random.Range(1, bola.Length);
+                    }
+                }
+
+                playersToLoad = new PlayersData[]{
+                    new PlayersData(Selecao.player1_cpu, Chars.ballsGame[Selecao.nivel[2]].color, Chars.rodentsGame[Selecao.nivel[1]].scale, Chars.ballsGame[Selecao.nivel[2]].densidade, Chars.rodentsGame[Selecao.nivel[1]].forca, Chars.ballsGame[Selecao.nivel[2]].drag, Chars.ballsGame[Selecao.nivel[2]].path, Chars.rodentsGame[Selecao.nivel[1]].path, "power"),
+                    new PlayersData(Selecao.player2_cpu, Chars.ballsGame[Selecao.nivel[5]].color, Chars.rodentsGame[Selecao.nivel[4]].scale, Chars.ballsGame[Selecao.nivel[5]].densidade, Chars.rodentsGame[Selecao.nivel[4]].forca, Chars.ballsGame[Selecao.nivel[5]].drag, Chars.ballsGame[Selecao.nivel[5]].path, Chars.rodentsGame[Selecao.nivel[4]].path, "power"),
+                    new PlayersData(Selecao.player3_cpu, Chars.ballsGame[Selecao.nivel[8]].color, Chars.rodentsGame[Selecao.nivel[7]].scale, Chars.ballsGame[Selecao.nivel[8]].densidade, Chars.rodentsGame[Selecao.nivel[7]].forca, Chars.ballsGame[Selecao.nivel[8]].drag, Chars.ballsGame[Selecao.nivel[8]].path, Chars.rodentsGame[Selecao.nivel[7]].path, "power"),
+                    new PlayersData(Selecao.player4_cpu, Chars.ballsGame[Selecao.nivel[11]].color, Chars.rodentsGame[Selecao.nivel[10]].scale, Chars.ballsGame[Selecao.nivel[11]].densidade, Chars.rodentsGame[Selecao.nivel[10]].forca, Chars.ballsGame[Selecao.nivel[11]].drag, Chars.ballsGame[Selecao.nivel[11]].path, Chars.rodentsGame[Selecao.nivel[10]].path, "power"),
+                    new PlayersData(Selecao.player5_cpu, Chars.ballsGame[Selecao.nivel[14]].color, Chars.rodentsGame[Selecao.nivel[13]].scale, Chars.ballsGame[Selecao.nivel[14]].densidade, Chars.rodentsGame[Selecao.nivel[13]].forca, Chars.ballsGame[Selecao.nivel[14]].drag, Chars.ballsGame[Selecao.nivel[14]].path, Chars.rodentsGame[Selecao.nivel[13]].path, "power"),
+                    new PlayersData(Selecao.player6_cpu, Chars.ballsGame[Selecao.nivel[17]].color, Chars.rodentsGame[Selecao.nivel[16]].scale, Chars.ballsGame[Selecao.nivel[17]].densidade, Chars.rodentsGame[Selecao.nivel[16]].forca, Chars.ballsGame[Selecao.nivel[17]].drag, Chars.ballsGame[Selecao.nivel[17]].path, Chars.rodentsGame[Selecao.nivel[16]].path, "power")
+                };
+
                 Application.LoadLevel("test_arena");
+                Application.UnloadLevel("selecao");
                 Destroy(this);
 
 

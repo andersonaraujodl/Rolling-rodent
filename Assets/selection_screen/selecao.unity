@@ -1239,11 +1239,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bola:
+  - {fileID: 187282, guid: c39d477d69deb244fa8fbc74debf1c50, type: 2}
   - {fileID: 137736, guid: 2cddb5b9dc269c940bb6bc256bb35479, type: 2}
   - {fileID: 129690, guid: c892a1f62c7e1574b9730f7d223a4d2b, type: 2}
   - {fileID: 190638, guid: 7eb6edb53fa32334d9df91d4b87934ed, type: 2}
   - {fileID: 131420, guid: 4208cac7b4b3a8b4480cbac72ba30858, type: 2}
   roedor:
+  - {fileID: 163752, guid: 2d69fe9e22698fd40969e387f9e835d3, type: 2}
   - {fileID: 192012, guid: 2c3547fa1c6394d4ab6626e81bdbe7ec, type: 2}
   - {fileID: 133770, guid: a32ed5f4a69ff8d41aa3802b01de4fd9, type: 2}
   bolaCena: []
