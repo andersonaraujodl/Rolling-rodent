@@ -7,7 +7,8 @@ public class Chars{
     {
         new Rodents("Random", "random", 0f, 0.0f, "Roedor Aleatório"),
         new Rodents("Ginbal", "hamster", 2f, 5.0f, "Hamster ágil e esperto"),
-        new Rodents("Ninky", "ratazana", 3f, 7.0f, "Hamster ágil e esperto")
+        new Rodents("Ninky", "ratazana", 3f, 7.0f, "Hamster ágil e esperto"),
+		new Rodents("Caps", "capivara", 6f, 7.0f, "Hamster ágil e esperto")
     };
 
     static public Balls[] ballsGame = new Balls[]
