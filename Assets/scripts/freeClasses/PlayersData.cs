@@ -12,15 +12,27 @@ public class PlayersData {
 	public GameObject roedor;
 	public Component power;
 
-	public PlayersData(GameGlobals.atrib atrib, Vector4 color, float scale, float densidade, float forca, float drag, string bolaPath, string roedorPath, string power){
-		this.atrib = atrib;
+	public PlayersData(string atrib, Vector4 color, float scale, float densidade, float forca, float drag, string bolaPath, string roedorPath, string power){
+		checkPlayer(atrib);
 		this.color = color;
 		this.scale = scale;
 		this.densidade = densidade;
 		this.forca = forca;
 		this.drag = drag;
-		this.bola = Resources.Load(bolaPath) as Material;
-		//this.roedor = Resources.Load (roedorPath) as GameObject;
+        this.bola = Resources.Load(bolaPath) as Material;
+		this.roedor = Resources.Load(roedorPath) as GameObject;
 		//this.power = power;
 	}
+
+    private void checkPlayer(string player)
+    {
+
+        if (player == "CPU") this.atrib = GameGlobals.atrib.NPC;
+        else if (player == "Player 1") this.atrib = GameGlobals.atrib.PLAYER_ONE;
+        else if (player == "Player 2") this.atrib = GameGlobals.atrib.PLAYER_TWO;
+        else if (player == "Player 3") this.atrib = GameGlobals.atrib.PLAYER_THREE;
+        else if (player == "Player 4") this.atrib = GameGlobals.atrib.PLAYER_FOUR;
+        else if (player == "Player 5") this.atrib = GameGlobals.atrib.PLAYER_FIVE;
+        else if (player == "Player 6") this.atrib = GameGlobals.atrib.PLAYER_SIX;
+    }
 }

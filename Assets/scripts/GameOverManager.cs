@@ -4,7 +4,7 @@ using System.Collections;
 
 public class GameOverManager : MonoBehaviour {
 	Animator anim;
-	public float restartDelay = 10f;
+	public float restartDelay = 9f;
 	float restartTimer;
 	public Text gameOver;
 
@@ -40,7 +40,8 @@ public class GameOverManager : MonoBehaviour {
 			if(restartTimer >= restartDelay)
 			{
 				// .. then reload the currently loaded level.
-				Application.LoadLevel(Application.loadedLevel);
+				Application.LoadLevel("selecao");
+                Application.UnloadLevel("test_arena");
 			}
 		}
 	}

@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: ratazana
+  m_Controller: {fileID: 9100000, guid: 3e42816aa5e95804a8acb0830f03ebde, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400004, guid: 731083d94b9ddd7468fa6db8005f7e17, type: 3}
+    m_OverrideClip: {fileID: 7400002, guid: e8325ed7c293003458027e55d242ba5f, type: 3}
+  - m_OriginalClip: {fileID: 7400002, guid: 731083d94b9ddd7468fa6db8005f7e17, type: 3}
+    m_OverrideClip: {fileID: 7400004, guid: e8325ed7c293003458027e55d242ba5f, type: 3}

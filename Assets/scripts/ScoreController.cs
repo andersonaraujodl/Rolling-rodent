@@ -27,7 +27,7 @@ public class ScoreController : MonoBehaviour {
 		if (!isOver){
 			placar.text = ScoreController.score + " jogadores";
 
-			tempo -= Time.fixedDeltaTime;
+			tempo -= Time.deltaTime;
 			
 			int min = (int)tempo / 60;
 			int segs = (int)tempo % 60;
