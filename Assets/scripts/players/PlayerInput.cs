@@ -21,6 +21,7 @@ public class PlayerInput : MonoBehaviour {
 		//move player
 		float h = Input.GetAxisRaw ("Horizontal_"+(int)control.playerData.atrib);
 		float v = Input.GetAxisRaw ("Vertical_"+(int)control.playerData.atrib);
+
 		float u = 0f;
 		control.move (h, u, v);
 

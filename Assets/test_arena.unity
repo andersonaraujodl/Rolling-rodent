@@ -935,7 +935,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096f6bc9e8c55854ba51a4710442ebca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUp: {fileID: 108672, guid: de214a931188d9c45901b732b297f5c5, type: 2}
+  powerUps:
+  - {fileID: 108672, guid: de214a931188d9c45901b732b297f5c5, type: 2}
+  - {fileID: 108672, guid: d55cf3984c0c1c44481ae20b045a7751, type: 2}
+  - {fileID: 108672, guid: 6f2c24b43df34624080102910366c81c, type: 2}
+  - {fileID: 108672, guid: 1b90e9d7fed588941b5598a80452a4dd, type: 2}
+  - {fileID: 108672, guid: 0c9b70e2632b03e4eac1c297e0179d15, type: 2}
+  - {fileID: 108672, guid: 2187998eb22312c44972738b3f1680c3, type: 2}
+  - {fileID: 108672, guid: c21ac9f49e8ebd744b0f641661612ce7, type: 2}
+  - {fileID: 108672, guid: 8963ae82dc37a3e43a7b7db98a7f5b9f, type: 2}
   delay: 5
 --- !u!1 &956757592
 GameObject:

@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour {
 	private Vector3 fixo;
 	private Transform giro;
 	private float rotY;
-	private float distToGround;
 	public bool hasHit = false;
 	public int delayReturn = 100;
 	private int delayCount;
@@ -28,9 +27,6 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
 		anim = GetComponentInChildren<Animator> ();
-		distToGround = GetComponent<Collider> ().bounds.extents.y;
-
-
 		giro = this.transform.FindChild("ginbal").transform;
 
 		fixo = giro.eulerAngles;
@@ -60,7 +56,6 @@ public class PlayerController : MonoBehaviour {
 		if (powerup != null && usingPowerUp) {
 			if(powerup.controlaDuracao()<=0f){
 				this.GetComponent<Rigidbody>().mass = powerup.revertMassa(this.GetComponent<Rigidbody>().mass);
-				this.GetComponent<Rigidbody>().drag = powerup.revertDrag(this.GetComponent<Rigidbody>().drag);
 				this.speed = powerup.revertForca(this.speed);
 				powerup = null;
 				usingPowerUp = false;
@@ -148,7 +143,6 @@ public class PlayerController : MonoBehaviour {
 		if (powerup != null && usingPowerUp == false) {
 			usingPowerUp = true;
 			this.GetComponent<Rigidbody>().mass = powerup.applyMassa(this.GetComponent<Rigidbody>().mass);
-			this.GetComponent<Rigidbody>().drag = powerup.applyDrag(this.GetComponent<Rigidbody>().drag);
 			this.speed = powerup.applyForca(this.speed);
 		}
 
@@ -172,7 +166,7 @@ public class PlayerController : MonoBehaviour {
 	 if (pd.atrib == GameGlobals.atrib.NPC) {
 			this.gameObject.AddComponent<AIController> ();
 			this.gameObject.AddComponent<NavMeshAgent> ();
-		} else if (pd.atrib != null) {
+		} else if (pd.atrib != GameGlobals.atrib.NPC) {
 			this.gameObject.AddComponent<PlayerInput> ();
 		}
 

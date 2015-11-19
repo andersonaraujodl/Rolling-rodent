@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/selection_screen/selecao.unity
   - enabled: 1
     path: Assets/test_arena.unity
+  - enabled: 1
+    path: Assets/menu_principal/MenuInicial.unity

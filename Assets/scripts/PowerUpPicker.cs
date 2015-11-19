@@ -7,11 +7,13 @@ public class PowerUpPicker : MonoBehaviour {
 	float delay = 1f;
 	PowerUp powerup;
 	float timer = 5f;
+	public float forca, massa, duracao;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
 		isPicked = false;
-		powerup = new PowerUp (2f, 4f, 2f,10f);
+		powerup = new PowerUp (forca, massa, duracao);
+
 	}
 	void OnTriggerEnter(Collider other){
 		if (other.GetComponent<PlayerController> ().powerup == null) {
