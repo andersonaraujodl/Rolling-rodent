@@ -56,6 +56,12 @@ public class Selecao : MonoBehaviour
         if (Application.loadedLevelName == "selecao")
         {
 
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.LoadLevel("MenuInicial");
+                Application.UnloadLevel("selecao");
+                Destroy(this);
+            }
             if (Input.GetKeyDown(KeyCode.Return))
             {
 

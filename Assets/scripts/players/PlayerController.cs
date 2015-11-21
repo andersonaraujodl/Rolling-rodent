@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour {
 				usingPowerUp = false;
 			}
 		}
-		Debug.Log (gameObject.GetInstanceID () + " status = " + isGrounded);
+//		Debug.Log (gameObject.GetInstanceID () + " status = " + isGrounded);
 
 	}
 	void OnTriggerEnter(Collider other) 

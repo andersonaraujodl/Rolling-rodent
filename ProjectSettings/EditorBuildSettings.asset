@@ -6,8 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/menu_principal/MenuInicial.unity
+  - enabled: 1
+    path: Assets/menu_principal/MenuCreditos.unity
+  - enabled: 1
     path: Assets/selection_screen/selecao.unity
   - enabled: 1
     path: Assets/test_arena.unity
-  - enabled: 1
-    path: Assets/menu_principal/MenuInicial.unity

@@ -25,8 +25,8 @@ public class PowerUpGenerator : MonoBehaviour {
 	
 	void instanciarPUp(){
 		int x = Random.Range(0, spawners.Length);
-		//int upselector = Random.Range (0, powerUps.Length);
-		int upselector = 3;
+		int upselector = Random.Range (0, powerUps.Length);
+		//int upselector = 3;
 			Instantiate(powerUps[upselector], spawners[x].transform.position, spawners[x].transform.rotation);
 
 	}
