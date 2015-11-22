@@ -21,11 +21,13 @@ public class PlayerController : MonoBehaviour {
 
 	int contadordePrint;
 
-	private float minSpeed = 0.2f;
+   
+    private float minSpeed = 0.2f;
 
+    
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody> ();
+        rb = GetComponent<Rigidbody> ();
 		anim = GetComponentInChildren<Animator> ();
 		giro = this.transform.FindChild("ginbal").transform;
 
@@ -33,11 +35,15 @@ public class PlayerController : MonoBehaviour {
 		rotY = fixo.y;
 
 		delayCount = delayReturn;
-	}
+
+       
+    }
 
 
 	void FixedUpdate(){
-		if (!hasHit) {
+
+        
+        if (!hasHit) {
 			fixo.y = Mathf.LerpAngle (fixo.y, rotY, 0.1f);
 			giro.eulerAngles = fixo;
 
@@ -53,7 +59,8 @@ public class PlayerController : MonoBehaviour {
 
 	}
 	void Update(){
-		if (powerup != null && usingPowerUp) {
+
+        if (powerup != null && usingPowerUp) {
 			if(powerup.controlaDuracao()<=0f){
 				this.GetComponent<Rigidbody>().mass = powerup.revertMassa(this.GetComponent<Rigidbody>().mass);
 				this.speed = powerup.revertForca(this.speed);
