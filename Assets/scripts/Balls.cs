@@ -18,7 +18,7 @@ public class Balls{
         this.color = color;
         this.densidade = densidade;
         this.drag = drag;
-        //this.power = power;
+        this.power = power;
         this.descricao = descricao;
     }
 }

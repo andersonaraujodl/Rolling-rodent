@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
 
 	private Vector3 fixo;
 	private Transform giro;
-	private float rotY;
+	public float rotY;
 	public bool hasHit = false;
 	public int delayReturn = 100;
 	private int delayCount;
@@ -168,6 +168,7 @@ public class PlayerController : MonoBehaviour {
 		GameObject roedor = Instantiate(pd.roedor, this.GetComponentInChildren<Transform>().position, this.GetComponentInChildren<Transform>().rotation ) as GameObject;
 		roedor.transform.localScale = this.transform.localScale;
 		roedor.transform.parent = this.transform.FindChild("ginbal").transform;
+		print (pd.poder);
 		this.poder = UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(gameObject, "Assets/scripts/players/PlayerController.cs (171,16)", pd.poder) as Skills;
 
 			

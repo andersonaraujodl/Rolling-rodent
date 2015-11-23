@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Salta : Skills {
+public class Pesa : Skills {
 
 	float  forcaUp = 100f;
-	PlayerController pc;
+
 	Rigidbody rb;
 
 	void Start () {
 		timer = (float)coolDown;
-		pc = GetComponent<PlayerController> ();
+
 		rb = GetComponent<Rigidbody> ();
 		print ("Script devidamente carregado");
 
@@ -35,32 +35,15 @@ public class Salta : Skills {
 			}
 		}
 
-		if (isUsing) {
-
-			float h = Input.GetAxisRaw ("Horizontal_" + (int)pc.playerData.atrib);
-			
-			
-			float v = Input.GetAxisRaw ("Vertical_" + (int)pc.playerData.atrib);
-
-			if(h==0)
-				h= 0.001f;
-
-			if(v==0)
-				v=0.001f;
-
-			pc.move (0f, forcaUp/pc.speed, 0f);
-			rb.transform.position += new Vector3(h/(pc.speed*-2f),0f, v/(pc.speed*-2f));
-		}
-
-
+	
 	}
 
 
 	public override void revertePoder(){
 		print("Reverteu poder");
 		isUsing = false;
-		rb.useGravity = true;
 
+		rb.mass = rb.mass/10000;
 
 	}
 	public override void aplicaPoder(){
@@ -68,7 +51,7 @@ public class Salta : Skills {
 			print("Rolou o poder");
 
 			isUsing = true;
-			rb.useGravity = false;
+			rb.mass = rb.mass*10000;
 
 
 		}

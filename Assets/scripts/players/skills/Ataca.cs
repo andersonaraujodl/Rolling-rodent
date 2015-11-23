@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Salta : Skills {
+public class Ataca : Skills {
 
-	float  forcaUp = 100f;
+	float  forcaBash = 500f;
+
 	PlayerController pc;
-	Rigidbody rb;
 
 	void Start () {
 		timer = (float)coolDown;
 		pc = GetComponent<PlayerController> ();
-		rb = GetComponent<Rigidbody> ();
 		print ("Script devidamente carregado");
 
 		
@@ -25,7 +24,6 @@ public class Salta : Skills {
 				if (isUsing){ 
 					revertePoder();
 					timer = (float) coolDown;
-					isCooling = true;
 				}else if (isCooling){ 
 					timer = (float) duration;
 					isCooling = false;
@@ -35,41 +33,25 @@ public class Salta : Skills {
 			}
 		}
 
-		if (isUsing) {
-
-			float h = Input.GetAxisRaw ("Horizontal_" + (int)pc.playerData.atrib);
-			
-			
-			float v = Input.GetAxisRaw ("Vertical_" + (int)pc.playerData.atrib);
-
-			if(h==0)
-				h= 0.001f;
-
-			if(v==0)
-				v=0.001f;
-
-			pc.move (0f, forcaUp/pc.speed, 0f);
-			rb.transform.position += new Vector3(h/(pc.speed*-2f),0f, v/(pc.speed*-2f));
-		}
-
-
+	
 	}
 
 
 	public override void revertePoder(){
 		print("Reverteu poder");
 		isUsing = false;
-		rb.useGravity = true;
-
 
 	}
 	public override void aplicaPoder(){
 		if (!isCooling && !isUsing ) {
-			print("Rolou o poder");
 
-			isUsing = true;
-			rb.useGravity = false;
+			float roty = pc.rotY;
+			print("Rolou o poder - "+roty);
+			float h = forcaBash*Mathf.Sin(Mathf.Deg2Rad* roty );
+			float v = forcaBash*Mathf.Cos(Mathf.Deg2Rad* roty );
 
+			pc.move (h,0f,v);
+			isUsing= true;
 
 		}
 	}

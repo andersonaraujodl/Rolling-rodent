@@ -28,8 +28,7 @@ public class Esmaga : Skills {
 				if (isUsing){ 
 					revertePoder();
 					timer = (float) coolDown;
-				}
-				if (isCooling){ 
+				}else if (isCooling){ 
 					timer = (float) duration;
 					isCooling = false;
 					isUsing = false;

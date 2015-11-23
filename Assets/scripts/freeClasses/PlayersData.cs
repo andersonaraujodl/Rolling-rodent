@@ -12,7 +12,7 @@ public class PlayersData {
 	public GameObject roedor;
 	public string poder;
 
-	public PlayersData(string atrib, Vector4 color, float scale, float densidade, float forca, float drag, string bolaPath, string roedorPath, string power){
+	public PlayersData(string atrib, Vector4 color, float scale, float densidade, float forca, float drag, string bolaPath, string roedorPath, string poder){
 		checkPlayer(atrib);
 		this.color = color;
 		this.scale = scale;
@@ -21,8 +21,10 @@ public class PlayersData {
 		this.drag = drag;
         this.bola = Resources.Load(bolaPath) as Material;
 		this.roedor = Resources.Load(roedorPath) as GameObject;
-		//this.poder = poder;
-		this.poder = "Salta";
+		this.poder = poder;
+
+
+
 	}
 
     private void checkPlayer(string player)
