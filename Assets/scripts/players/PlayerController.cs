@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 	public float speed = 5;
 	private Rigidbody rb;
 	public PowerUp powerup;
+	public Skills poder;
 	public PlayersData playerData;
 	bool usingPowerUp = false;
 	bool isWalking = false;
@@ -167,6 +168,7 @@ public class PlayerController : MonoBehaviour {
 		GameObject roedor = Instantiate(pd.roedor, this.GetComponentInChildren<Transform>().position, this.GetComponentInChildren<Transform>().rotation ) as GameObject;
 		roedor.transform.localScale = this.transform.localScale;
 		roedor.transform.parent = this.transform.FindChild("ginbal").transform;
+		this.poder = UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(gameObject, "Assets/scripts/players/PlayerController.cs (171,16)", pd.poder) as Skills;
 
 			
 			
@@ -177,6 +179,11 @@ public class PlayerController : MonoBehaviour {
 			this.gameObject.AddComponent<PlayerInput> ();
 		}
 
+	}
+
+	void executaPoder(){
+
+		this.poder.aplicaPoder ();
 	}
 
 

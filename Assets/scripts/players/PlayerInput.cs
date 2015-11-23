@@ -28,5 +28,11 @@ public class PlayerInput : MonoBehaviour {
 
 		if (control.powerup != null)
 			control.usePowerUp ();
+
+
+		if(Input.GetButton("Fire_"+(int)control.playerData.atrib))
+			control.poder.aplicaPoder();
+		
 	}
+
 }
