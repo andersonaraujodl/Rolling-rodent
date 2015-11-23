@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Pause : MonoBehaviour {
@@ -9,7 +10,7 @@ public class Pause : MonoBehaviour {
 
     public AudioSource efeito;
 
-    public GUI menuPause;
+    public Text menuPause;
 
 
     // Use this for initialization
@@ -34,6 +35,7 @@ public class Pause : MonoBehaviour {
                 controlePause = false;
                 bgm.volume = 0.1f;
                 efeito.Play();
+                menuPause.text= "Aperte 'F4' para sair ou 'ESC' para voltar ao jogo";
             }
             else
             {
@@ -43,6 +45,7 @@ public class Pause : MonoBehaviour {
                 bgm.volume = 0.65f;
 
                 efeito.Play();
+                menuPause.text = "";
             }
         }
 
@@ -50,8 +53,10 @@ public class Pause : MonoBehaviour {
         {
 
             controlePause = true;
+            Time.timeScale = 1; // voltar ao jogo
             Application.LoadLevel("MenuInicial");
             Application.UnloadLevel("test_arena");
+            Destroy(this);
 
         }
 

@@ -46,6 +46,7 @@ public class Selecao : MonoBehaviour
         player5_cpu = "CPU";
         player6_cpu = "CPU";
 
+        
 
     }
 
