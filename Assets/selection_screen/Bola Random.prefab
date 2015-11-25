@@ -12,7 +12,6 @@ GameObject:
   - 135: {fileID: 13552116}
   - 23: {fileID: 2380206}
   - 54: {fileID: 5447930}
-  - 114: {fileID: 11494878}
   - 135: {fileID: 13579714}
   m_Layer: 8
   m_Name: Bola Random
@@ -79,21 +78,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11494878
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb9734ea7e83b40459ea84d6d0de71b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  anim: {fileID: 0}
-  hasHit: 0
-  delayReturn: 10
 --- !u!135 &13552116
 SphereCollider:
   m_ObjectHideFlags: 1

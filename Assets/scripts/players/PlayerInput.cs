@@ -19,6 +19,8 @@ public class PlayerInput : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		//move player
+
+		print("Obj ID:  - axis Horizontal_"+(int)control.playerData.atrib);
 		float h = Input.GetAxisRaw ("Horizontal_"+(int)control.playerData.atrib);
 		float v = Input.GetAxisRaw ("Vertical_"+(int)control.playerData.atrib);
 

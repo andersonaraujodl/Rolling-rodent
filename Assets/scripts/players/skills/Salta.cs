@@ -11,7 +11,7 @@ public class Salta : Skills {
 		timer = (float)coolDown;
 		pc = GetComponent<PlayerController> ();
 		rb = GetComponent<Rigidbody> ();
-		print ("Script devidamente carregado");
+		//print ("Script devidamente carregado");
 
 		
 	}
@@ -30,7 +30,7 @@ public class Salta : Skills {
 					timer = (float) duration;
 					isCooling = false;
 					isUsing = false;
-					print (Time.time+" - Restaurado");
+					//print (Time.time+" - Restaurado");
 				}
 			}
 		}
@@ -57,7 +57,7 @@ public class Salta : Skills {
 
 
 	public override void revertePoder(){
-		print("Reverteu poder");
+		//print("Reverteu poder");
 		isUsing = false;
 		rb.useGravity = true;
 
@@ -65,7 +65,7 @@ public class Salta : Skills {
 	}
 	public override void aplicaPoder(){
 		if (!isCooling && !isUsing ) {
-			print("Rolou o poder");
+			//print("Rolou o poder");
 
 			isUsing = true;
 			rb.useGravity = false;

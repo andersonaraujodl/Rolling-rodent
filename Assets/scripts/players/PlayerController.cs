@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour {
 		this.playerData = pd;
 		this.transform.localScale = new Vector3(pd.scale,pd.scale,pd.scale);
 		this.GetComponent<Renderer> ().material = pd.bola;
-		this.GetComponent<Renderer>().material.SetColor("_Color", pd.color);
+		//this.GetComponent<Renderer>().material.SetColor("_Color", pd.color);
 		this.GetComponent<Rigidbody>().mass = pd.densidade*pd.scale;
 		this.GetComponent<Rigidbody>().drag = pd.drag;
 		this.GetComponent<PlayerController>().speed = pd.forca;

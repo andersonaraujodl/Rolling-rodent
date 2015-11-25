@@ -12,7 +12,6 @@ GameObject:
   - 135: {fileID: 13533460}
   - 23: {fileID: 2369732}
   - 54: {fileID: 5454132}
-  - 114: {fileID: 11473954}
   - 135: {fileID: 13592696}
   m_Layer: 8
   m_Name: Bola 2
@@ -79,21 +78,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11473954
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb9734ea7e83b40459ea84d6d0de71b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  anim: {fileID: 0}
-  hasHit: 0
-  delayReturn: 10
 --- !u!135 &13533460
 SphereCollider:
   m_ObjectHideFlags: 1

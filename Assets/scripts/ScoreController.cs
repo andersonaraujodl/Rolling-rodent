@@ -6,6 +6,7 @@ public class ScoreController : MonoBehaviour {
 	static public int score =10;
 	static public float tempo;
 	static public bool isOver;
+	float initialTime;
 
 	public GameObject[] jogadores;
 	public Text placar;
@@ -15,20 +16,22 @@ public class ScoreController : MonoBehaviour {
 	void Awake () {
 
 	
-		tempo = 300;
+		tempo = 300f;
+		initialTime = Time.time;
 		isOver = false;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		 
+		float timedif = Time.time - initialTime;
+
+
 
 		
 		if (!isOver){
 			placar.text = ScoreController.score + " jogadores";
 
-			tempo -= Time.deltaTime;
-			
+			tempo = 300 - timedif;
 			int min = (int)tempo / 60;
 			int segs = (int)tempo % 60;
 			string separador = ":";
@@ -39,6 +42,14 @@ public class ScoreController : MonoBehaviour {
 			timer.text = min + separador + segs;
 
 		}
+
+
+	}
+	void FixedUpdate(){
+		temporizador ();
+	}
+	IEnumerator temporizador(){
+		yield return new WaitForSeconds(1);
 
 
 	}
