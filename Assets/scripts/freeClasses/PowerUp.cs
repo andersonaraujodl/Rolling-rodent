@@ -5,11 +5,13 @@ public class PowerUp {
 	private float forca;
 	private float massa;
 	private float duracao;
+	public Vector4 cor;
 
-	public PowerUp (float forca, float massa, float duracao){
+	public PowerUp (float forca, float massa, float duracao, Vector4 cor){
 		this.forca = forca;
 		this.massa = massa;
 		this.duracao = duracao;
+		this.cor = cor;
 
 	}
 

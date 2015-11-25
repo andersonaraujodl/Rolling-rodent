@@ -1,18 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\LookAt.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\players\skills\Esmaga.cs">
     <Files>
-      <File FileName="Assets\scripts\ScoreController.cs" Line="39" Column="18" />
+      <File FileName="Assets\scripts\players\skills\Esmaga.cs" Line="75" Column="79" />
+      <File FileName="Assets\scripts\ScoreController.cs" Line="1" Column="1" />
       <File FileName="Assets\menu_principal\MenuInicial.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\players\PlayerInput.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\players\skills\Esmaga.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\freeClasses\PlayersData.cs" Line="15" Column="42" />
-      <File FileName="Assets\scripts\players\PlayerController.cs" Line="164" Column="72" />
+      <File FileName="Assets\scripts\freeClasses\PlayersData.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\players\PlayerController.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\players\Skills.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\players\skills\Pesa.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Chars.cs" Line="20" Column="60" />
-      <File FileName="Assets\scripts\Balls.cs" Line="8" Column="19" />
-      <File FileName="Assets\scripts\players\skills\Salta.cs" Line="68" Column="6" />
+      <File FileName="Assets\scripts\Chars.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Balls.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\players\skills\Salta.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\LookAt.cs" Line="22" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>

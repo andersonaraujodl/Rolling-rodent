@@ -12,7 +12,9 @@ public class PowerUpPicker : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator> ();
 		isPicked = false;
-		powerup = new PowerUp (forca, massa, duracao);
+		Material material = this.GetComponent<Renderer> ().material;
+		Vector4 cor = new Vector4 (material.GetColor("_EmissionColor").r, material.GetColor("_EmissionColor").g, material.GetColor("_EmissionColor").b, material.color.a);
+		powerup = new PowerUp (forca, massa, duracao, cor);
 
 	}
 	void OnTriggerEnter(Collider other){

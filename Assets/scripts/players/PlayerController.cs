@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -20,6 +21,8 @@ public class PlayerController : MonoBehaviour {
 	public int delayReturn = 100;
 	private int delayCount;
 
+	GameObject texto;
+
 	int contadordePrint;
 
    
@@ -31,6 +34,7 @@ public class PlayerController : MonoBehaviour {
         rb = GetComponent<Rigidbody> ();
 		anim = GetComponentInChildren<Animator> ();
 		giro = this.transform.FindChild("ginbal").transform;
+		texto = giro.FindChild("Canvas").transform.FindChild ("Text").gameObject;
 
 		fixo = giro.eulerAngles;
 		rotY = fixo.y;
@@ -65,6 +69,7 @@ public class PlayerController : MonoBehaviour {
 			if(powerup.controlaDuracao()<=0f){
 				this.GetComponent<Rigidbody>().mass = powerup.revertMassa(this.GetComponent<Rigidbody>().mass);
 				this.speed = powerup.revertForca(this.speed);
+				texto.GetComponent<Text>().color = new Color(0.5f, 0.5f, 0.5f);
 				powerup = null;
 				usingPowerUp = false;
 			}
@@ -152,6 +157,9 @@ public class PlayerController : MonoBehaviour {
 			usingPowerUp = true;
 			this.GetComponent<Rigidbody>().mass = powerup.applyMassa(this.GetComponent<Rigidbody>().mass);
 			this.speed = powerup.applyForca(this.speed);
+
+
+			texto.GetComponent<Text>().color = new Color(powerup.cor.x, powerup.cor.y, powerup.cor.z);
 		}
 
 	}
