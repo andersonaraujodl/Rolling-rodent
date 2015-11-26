@@ -10,7 +10,8 @@ public class Pausa : MonoBehaviour {
 
     public AudioSource efeito;
 
-    public Text menuPause;
+	public Image pauseImg;
+	public Text pauseTxt;
 
 
     // Use this for initialization
@@ -19,7 +20,8 @@ public class Pausa : MonoBehaviour {
 
         controlePause = true;
         Time.timeScale = 1; // voltar ao jogo
-
+		pauseImg.enabled = false;
+		pauseTxt.enabled = false;
 
     }
 
@@ -35,7 +37,8 @@ public class Pausa : MonoBehaviour {
                 controlePause = false;
                 bgm.volume = 0.1f;
                 efeito.Play();
-                menuPause.text= "Aperte 'F4' para sair ou 'ESC' para voltar ao jogo";
+				pauseImg.enabled = true;
+				pauseTxt.enabled = true;
             }
             else
             {
@@ -45,7 +48,8 @@ public class Pausa : MonoBehaviour {
                 bgm.volume = 0.65f;
 
                 efeito.Play();
-                menuPause.text = "";
+				pauseImg.enabled = false;
+				pauseTxt.enabled = false;
             }
         }
 

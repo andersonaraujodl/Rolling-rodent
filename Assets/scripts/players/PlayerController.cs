@@ -177,8 +177,21 @@ public class PlayerController : MonoBehaviour {
 		roedor.transform.localScale = this.transform.localScale;
 		roedor.transform.parent = this.transform.FindChild("ginbal").transform;
 		print (pd.poder);
-		this.poder = UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(gameObject, "Assets/scripts/players/PlayerController.cs (171,16)", pd.poder) as Skills;
 
+		switch (pd.poder) {
+		case "Ataca":
+			this.poder = this.gameObject.AddComponent<Ataca> ();
+			break;
+		case "Esmaga":
+			this.poder = this.gameObject.AddComponent<Esmaga> ();
+			break;
+		case "Pesa":
+			this.poder = this.gameObject.AddComponent<Pesa> ();
+			break;
+		case "Salta":
+			this.poder = this.gameObject.AddComponent<Salta> ();
+			break;
+		}
 			
 			
 	 if (pd.atrib == GameGlobals.atrib.NPC) {

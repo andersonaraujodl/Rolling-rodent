@@ -4,7 +4,7 @@ using System.Collections;
 public class MenuCreditos : MonoBehaviour {
 
 	public GUISkin customSkin; // Para customizar estilo botao menu credito
-	public Texture TexturaMenuCreditos; // Para definir textura de fundo menu credito
+	public Texture TexturaMenuCreditos, texturaNomeJogo; // Para definir textura de fundo menu credito
 	public int selGradeBotoes = 0; // Selecao grade botoes igual a zero, para "cursor" comecar no primeiro botao descrito no array
 	public string[]selBotoes;// Array botoes (elemento 0,elemento 1, elemento 2, para matriz com tres botoes)
 	private int maxBotoes; // Numero total de botoes em nossa grade
@@ -49,6 +49,10 @@ public class MenuCreditos : MonoBehaviour {
 		// Rect(posicao horizontal inicial, vertical inicial,largura,altura), parametro);
 		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), TexturaMenuCreditos); //local textura de fundo do menu creditos, textura de fundo que recebera textura externa no Unity
 
+		// Nome do Jogo
+		// Rect(posicao horizontal inicial, vertical inicial,largura,altura), parametro);
+		GUI.DrawTexture (new Rect (Screen.width/4, 0, Screen.width/2, Screen.height / (1.5f*2f)), texturaNomeJogo); //local textura de fundo do menu, textura de fundo que recebera textura externa no Unity
+
 
 		// Botao
 		// Necessario um menu responsivo (que se adapta ao tamanho da tela)
@@ -58,6 +62,9 @@ public class MenuCreditos : MonoBehaviour {
 		alt = 0.3f*Screen.height; //altura botao
 		//GUI.SelectionGrid cria uma grade de selecao (new Rect(posicao x, posicao y,espacamento largura botao, espacamento altura botao), array botoes, qtde colunas)
 		selGradeBotoes = GUI.SelectionGrid (new Rect (posX, posY, larg, alt), selGradeBotoes, selBotoes, 1);
+		GUI.contentColor = new Color (.39f, .13f, .13f,1f);
+		GUI.skin.label.fontSize = 30;
+		GUI.Label (new Rect ((Screen.width / 2)-(Screen.width/8), (Screen.height / (1.5f * 2f)) + 50, Screen.width / 2, Screen.height / 2), "Nomes:\n    Carolina Fernandes\n    Diego Hortiz\n    Marcelo Pietragalla");
 
 		}
 }

@@ -25,6 +25,7 @@ public class Ataca : Skills {
 				if (isUsing){ 
 					revertePoder();
 					timer = (float) coolDown;
+					isCooling = true;
 				}else if (isCooling){ 
 					timer = (float) duration;
 					isCooling = false;

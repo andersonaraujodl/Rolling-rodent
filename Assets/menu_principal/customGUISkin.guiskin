@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 12001, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: customGUISkin
   m_EditorClassIdentifier: 
-  m_Font: {fileID: 12800000, guid: 0a455d79ca97f854994c225b7e5c55ae, type: 3}
+  m_Font: {fileID: 12800000, guid: 41d2d217b0abab5478e6dfb5fae029b1, type: 3}
   m_box:
     m_Name: box
     m_Normal:
