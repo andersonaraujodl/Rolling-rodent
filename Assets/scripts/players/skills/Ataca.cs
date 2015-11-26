@@ -9,8 +9,9 @@ public class Ataca : Skills {
 
 	void Start () {
 		timer = (float)coolDown;
+		lookat = GetComponentInChildren<LookAt> ();
 		pc = GetComponent<PlayerController> ();
-		print ("Script devidamente carregado");
+		//print ("Script devidamente carregado");
 
 		
 	}
@@ -27,10 +28,15 @@ public class Ataca : Skills {
 				}else if (isCooling){ 
 					timer = (float) duration;
 					isCooling = false;
+					isLoaded = true;
 					isUsing = false;
-					print (Time.time+" - Restaurado");
+					//print (Time.time+" - Restaurado");
 				}
 			}
+		}
+
+		if (isLoaded) {
+			chargeDisplay();
 		}
 
 	
@@ -38,15 +44,17 @@ public class Ataca : Skills {
 
 
 	public override void revertePoder(){
-		print("Reverteu poder");
+		//print("Reverteu poder");
 		isUsing = false;
 
 	}
 	public override void aplicaPoder(){
 		if (!isCooling && !isUsing ) {
+			isLoaded =  false;
+			lookat.alteraTexto(" ");
 
 			float roty = pc.rotY;
-			print("Rolou o poder - "+roty);
+			//print("Rolou o poder - "+roty);
 			float h = forcaBash*Mathf.Sin(Mathf.Deg2Rad* roty );
 			float v = forcaBash*Mathf.Cos(Mathf.Deg2Rad* roty );
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class PlayersData {
 	public GameGlobals.atrib atrib;  
 	public Vector4 color ;

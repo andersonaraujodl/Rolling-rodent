@@ -9,15 +9,16 @@ public class Pesa : Skills {
 
 	void Start () {
 		timer = (float)coolDown;
-
+		lookat = GetComponentInChildren<LookAt> ();
 		rb = GetComponent<Rigidbody> ();
-		print ("Script devidamente carregado");
+		//print ("Script devidamente carregado");
 
 		
 	}
 
 	// Update is called once per frame
 	void Update () {
+
 		if( isUsing || isCooling){
 			timer-= Time.deltaTime;
 			
@@ -29,18 +30,22 @@ public class Pesa : Skills {
 				}else if (isCooling){ 
 					timer = (float) duration;
 					isCooling = false;
+					isLoaded = true;
 					isUsing = false;
-					print (Time.time+" - Restaurado");
+					//print (Time.time+" - Restaurado");
 				}
 			}
 		}
 
+		if (isLoaded) {
+			chargeDisplay();
+		}
 	
 	}
 
 
 	public override void revertePoder(){
-		print("Reverteu poder");
+		//print("Reverteu poder");
 		isUsing = false;
 
 		rb.mass = rb.mass/10000;
@@ -48,8 +53,9 @@ public class Pesa : Skills {
 	}
 	public override void aplicaPoder(){
 		if (!isCooling && !isUsing ) {
-			print("Rolou o poder");
-
+			//print("Rolou o poder");
+			isLoaded =  false;
+			lookat.alteraTexto(" ");
 			isUsing = true;
 			rb.mass = rb.mass*10000;
 

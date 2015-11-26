@@ -7,6 +7,10 @@ public class Skills : MonoBehaviour {
 	public float timer;
 	public bool isUsing = false;
 	public bool isCooling = true;
+	public bool isLoaded = false;
+	public bool showSign = true;
+	public float dispTime=0f;
+	public LookAt lookat; 
 
 
 	
@@ -15,6 +19,23 @@ public class Skills : MonoBehaviour {
 		
 	}
 	public virtual void aplicaPoder(){
+
+	}
+	public void chargeDisplay(){
+	
+
+		if (dispTime > 0.5f || dispTime == 0f) {
+
+			if (showSign)
+				lookat.alteraTexto ("!");
+			else
+				lookat.alteraTexto (" ");
+			dispTime = 0f;
+			showSign = !showSign;
+		}
+		dispTime +=Time.deltaTime;
+
+
 
 	}
 }

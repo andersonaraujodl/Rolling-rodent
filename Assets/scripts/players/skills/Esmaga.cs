@@ -14,7 +14,8 @@ public class Esmaga : Skills {
 	void Start () {
 		timer = (float)coolDown;
 		rb = GetComponent<Rigidbody> ();
-		print ("Script devidamente carregado");
+		lookat = GetComponentInChildren<LookAt> ();
+		//print ("Script devidamente carregado");
 		escalaInicial =  rb.transform.localScale;
 		
 	}
@@ -31,6 +32,7 @@ public class Esmaga : Skills {
 				}else if (isCooling){ 
 					timer = (float) duration;
 					isCooling = false;
+					isLoaded = true;
 					isUsing = false;
 				}
 			}
@@ -62,6 +64,10 @@ public class Esmaga : Skills {
 			}
 		}
 
+		if (isLoaded) {
+			chargeDisplay();
+		}
+
 	}
 
 	public override void revertePoder(){
@@ -71,7 +77,9 @@ public class Esmaga : Skills {
 	}
 	public override void aplicaPoder(){
 		if (!isCooling && !isUsing ) {
-			print("Rolou o poder");
+			//print("Rolou o poder");
+			isLoaded =  false;
+			lookat.alteraTexto(" ");
 			escalaDestino = new Vector3(escalaInicial.x*1.2f, 0.1f, escalaInicial.z*1.2f);
 			isShrinking = true;
 			isUsing = true;
