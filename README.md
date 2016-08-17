@@ -8,7 +8,7 @@ _Rolling Rodents_ is a multiplayer game created as a school project for the Adva
 * Open Unity 3D
 * Open the project folder
 * Run it
-* Have fun
+* Have fun!
 
 ### Game Instructions
 
